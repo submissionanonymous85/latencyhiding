@@ -166,6 +166,65 @@
 	</table>
 	<br>
 
+<h1>Latency Analysis</h1>
+
+We performed an empirical latency analysis with a battery of out-of-domain test singals to evaluate the model's response time.
+Here, we re-state our results and highlight what is the signal that yield the best results. Interestingly, in all cases, the models reacted 
+faster to signals of starting amplitude of 0 dB.
+Finally, since we trained all models in datasets sampled at 44.1 kHz, we specify our test signal lengths (4096,44100) in time as
+(92.9ms,1s) respectively.
+<p></p>
+<style type="text/css">
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	  overflow:hidden;padding:10px 5px;word-break:normal;}
+	.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+	.tg .tg-y8ji{border-color:#000000;color:#333333;font-size:medium;text-align:center;vertical-align:top}
+	.tg .tg-ntxp{border-color:#000000;color:#333333;font-size:medium;font-weight:bold;text-align:center;vertical-align:top}
+	</style>
+	<table class="tg" width="100%">
+	<thead>
+	  <tr>
+		<th class="tg-y8ji"></th>
+		<th class="tg-ntxp">Candombe</th>
+		<th class="tg-ntxp">Drumset</th>
+		<th class="tg-ntxp">Guitar</th>
+		<th class="tg-ntxp">Violin</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td class="tg-ntxp">LH</td>
+		<td class="tg-y8ji">2.6 [2.2, 3.4]<br>White Noise (92.9ms)</td>
+		<td class="tg-y8ji">2.7 [2.2, 3.6]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">2.6 [2.2, 3.9]<br>White Noise (92.9ms)</td>
+		<td class="tg-y8ji">3.1 [2.3, 4.7]<br>White Noise (1s)</td>
+	  </tr>
+	  <tr>
+		<td class="tg-ntxp">SLOW</td>
+		<td class="tg-y8ji">31.5 [26.7, 46.4]<br>White Noise (92.9ms)</td>
+		<td class="tg-y8ji">32.0 [27.4, 50.1]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">33.0 [28.2, 39.3]<br>Dense Sinusoidal (92.9ms)</td>
+		<td class="tg-y8ji">31.6 [27.5, 36.9]<br>White Noise (1s)</td>
+	  </tr>
+	  <tr>
+		<td class="tg-ntxp">RAVE-REP</td>
+		<td class="tg-y8ji">126.5 [103.5, 196.2]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">127.4 [103.1, 185.5]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">128.5 [107.7, 162.5]<br>Harmonic Signal (92.9ms)</td>
+		<td class="tg-y8ji">126.2 [104.2, 226.6]<br>White Noise (1s)</td>
+	  </tr>
+	  <tr>
+		<td class="tg-ntxp">RAVE-ADV</td>
+		<td class="tg-y8ji">126.4 [104.7, 149.1]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">131.1 [104.9, 162.5]<br>White Noise (1s)</td>
+		<td class="tg-y8ji">133.8 [113.2, 162.5]<br>Harmonic Signal (1s)</td>
+		<td class="tg-y8ji">127.5 [106.3, 153.7]<br>White Noise (1s)</td>
+	  </tr>
+	</tbody>
+	</table>
+<b>Note:</b> All test signals are <b>0 dB</b> amplitude.
 <h1>Audio Examples</h1>
 
 
@@ -174,9 +233,9 @@
 <p>We show examples of our <i>latency hiding</i> model reconstructing an audio input
 	by combining its fast and slow generators.<br>
 	For illustrative purposes, we show a few excerpts extracted from the train set, as
-	RAVE-like autoencoders do not generalize well to unseen temporal structures like chords
-	or fundamental frequencies, and can generate additional transients in presence of such
-	signals.
+	RAVE-like autoencoders such as our slow generator do not generalize well to unseen 
+	temporal structures like chords or fundamental frequencies, and can generate additional
+	transients in presence of such signals.
 
 </p>
 
@@ -385,8 +444,8 @@
 <p>
 We analyze the spectral reconstruction capabilities of our model and compare with an ablated version (SLOW)
 without the fast generator, that learns to reconstruct the full spectrogram, and RAVE trained on the
-<i>Representation Learning</i> objective. <br>
-For reference, we also add RAVE trained with an adversarial stage. We found it shows wose spectral
+<i>Representation Learning</i> objective (RAVE-REP). <br>
+For reference, we also add RAVE trained with an adversarial stage (RAVE-ADV). We found it shows wose spectral
 reconstruction results, but we believe it presents better audio quality.
 We leave for future work an exploration of adversarial training possibilities in a latency-hiding configuration.<br>
 We show reconstructed excerpts from the test set.
@@ -398,8 +457,8 @@ We show reconstructed excerpts from the test set.
 <th><center>Original</center></th>
 <th><center>Latency Hiding</center></th>
 <th><center>SLOW</center></th>
-<th><center>RAVE (Rep. Learning)</center></th>
-<th><center>RAVE (Adv. Fine Tuning)</center></th>
+<th><center>RAVE-REP</center></th>
+<th><center>RAVE-ADV</center></th>
 </tr>
 <tr>
 <td><b>Candombe</b></td>
