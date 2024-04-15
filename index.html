@@ -118,9 +118,9 @@
 
 <html>
 <head>
-	<title>This is my paper title</title>
+	<title>Hiding Audio Latency in Neural Synthesizerse</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:title" content="Hiding Audio Latency in Neural Synthesizers" />
 	<meta property="og:description" content="Paper description." />
 
 	<!-- Get from Google Analytics -->
@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Creative and Descriptive Paper Title</span>
+		<span style="font-size:36px">Hiding Audio Latency in Neural Synthesizers</span>
 		<table align=center width=600px>
 		</table>
 	</center>
@@ -148,7 +148,6 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:500px" src="./resources/teaser.png"/>
 					</center>
 				</td>
 			</tr>
@@ -158,10 +157,10 @@
 	<hr>
 
 	<table align=center width=850px>
-		<center><h1>Abstract</h1></center>
+		<center><h1></h1></center>
 		<tr>
 			<td>
-				This is my abstract.
+
 			</td>
 		</tr>
 	</table>
@@ -169,67 +168,162 @@
 
 	<center><h1>Audio Examples</h1></center>
 
+	<center><h3>Spectral reconstruction using parallel generators</h3></center>
+
+	<center><p>We show examples of our <i>latency hiding</i> model reconstructing an audio input
+		by combining its fast and slow generators.<br> Excerpts extracted from the training set.
+	</p></center>
+
+	
 	<br>
 <table>
   <tr>
-    <th><center>Test</center></th>
-    <th><center>Test </center></th>
-    <th><center>Test</center></th>
+    <th><center>Instrument</center></th>
+    <th><center>Original </center></th>
+    <th><center>Reconstruction</center></th>
+	<th><center>Fast Generator</center></th>
+	<th><center>Slow Generator</center></th>
   </tr>
   <tr>
-    <td><b>Test</td>
+    <td><b>Candombe</td>
     <td>
     <audio controls id="player">
-    <source src="resources/vdrum.wav" type="audio/mpeg">
-    <source src="resources/vdrum.wav" type="audio/ogg">
+    <source src="resources/audio/lh_candombe_1_ORIGINAL.wav" type="audio/mpeg">
+    <source src="resources/audio/lh_candombe_1_ORIGINAL.wav" type="audio/ogg">
     Your browser does not support the audio element.
     </audio>
     </td>
-    <td>
-    <audio controls id="player">
-    <source src="resources/vdrum.wav" type="audio/mpeg">
-    <source src="resources/vdrum.wav" type="audio/ogg">
-    Your browser does not support the audio element.
-    </audio>
-    </td>
-    <td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_candombe_1_RECON.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_candombe_1_RECON.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_candombe_1_FAST.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_candombe_1_FAST.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+	
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_candombe_1_SLOW.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_candombe_1_SLOW.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
     &nbsp;
   </tr>
 
   <tr>
-    <td><b>Test</b></td>
+    <td><b>Drums</b></td>
     <td>
-    <audio controls id="player">
-    <source src="resources/vdrum.wav" type="audio/mpeg">
-    <source src="resources/vdrum.wav" type="audio/ogg">
-    Your browser does not support the audio element.
-    </audio>
-    </td>
-    <td>
-		<audio controls id="player">
-		<source src="resources/vdrum.wav" type="audio/mpeg">
-		<source src="resources/vdrum.wav" type="audio/ogg">
-		Your browser does not support the audio element.
-		</audio>
-		</td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_drumset_2_ORIGINAL.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_drumset_2_ORIGINAL.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_drumset_2_RECON.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_drumset_2_RECON.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_drumset_2_FAST.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_drumset_2_FAST.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+	
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_drumset_2_SLOW.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_drumset_2_SLOW.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+	&nbsp;
   </tr>
 
   <tr>
-    <td><b>Test</b></td>
+    <td><b>Guitar</b></td>
     <td>
-    <audio controls id="player">
-    <source src="resources/vdrum.wav" type="audio/mpeg">
-    <source src="resources/vdrum.wav" type="audio/ogg">
-    Your browser does not support the audio element.
-    </audio>
-    </td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_guitar_5_ORIGINAL.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_guitar_5_ORIGINAL.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_guitar_5_RECON.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_guitar_5_RECON.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_guitar_5_FAST.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_guitar_5_FAST.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+	
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_guitar_5_SLOW.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_guitar_5_SLOW.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+  </tr>
+
+  <tr>
+    <td><b>Violin</b></td>
     <td>
-		<audio controls id="player">
-		<source src="resources/vdrum.wav" type="audio/mpeg">
-		<source src="resources/vdrum.wav" type="audio/ogg">
-		Your browser does not support the audio element.
-		</audio>
-		</td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_violin_3_ORIGINAL.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_violin_3_ORIGINAL.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_violin_3_RECON.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_violin_3_RECON.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_violin_3_FAST.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_violin_3_FAST.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
+	
+	<td>
+	<audio controls id="player">
+	<source src="resources/audio/lh_violin_3_SLOW.wav" type="audio/mpeg">
+	<source src="resources/audio/lh_violin_3_SLOW.wav" type="audio/ogg">
+	Your browser does not support the audio element.
+	</audio>
+	</td>
   </tr>
 </table>
 
