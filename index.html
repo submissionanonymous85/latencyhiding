@@ -224,7 +224,7 @@ Finally, since we trained all models in datasets sampled at 44.1 kHz, we specify
 	  </tr>
 	</tbody>
 	</table>
-<b>Note:</b> All test signals are <b>0 dB</b> amplitude.
+<b>Note:</b> Latency values are expressed as <i>mean</i>, [<i>min</i>, <i>max</i>] in milliseconds (ms). All test signals are <b>0 dB</b> amplitude.
 <h1>Audio Examples</h1>
 
 
@@ -445,7 +445,7 @@ Finally, since we trained all models in datasets sampled at 44.1 kHz, we specify
 We analyze the spectral reconstruction capabilities of our model and compare with an ablated version (SLOW)
 without the fast generator, that learns to reconstruct the full spectrogram, and RAVE trained on the
 <i>Representation Learning</i> objective (RAVE-REP). <br>
-For reference, we also add RAVE trained with an adversarial stage (RAVE-ADV). We found it shows wose spectral
+For reference, we also add RAVE trained with an adversarial stage (RAVE-ADV). We found it shows worse spectral
 reconstruction results, but we believe it presents better audio quality.
 We leave for future work an exploration of adversarial training possibilities in a latency-hiding configuration.<br>
 We show reconstructed excerpts from the test set.
