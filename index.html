@@ -173,8 +173,11 @@
 
 <p>We show examples of our <i>latency hiding</i> model reconstructing an audio input
 	by combining its fast and slow generators.<br>
-	We intend to illustrate the transient separation capabilities of our model.
-	We show excerpts extracted from the train set.
+	For illustrative purposes, we show a few excerpts extracted from the train set, as
+	RAVE-like autoencoders do not generalize well to unseen temporal structures like chords
+	or fundamental frequencies, and can generate additional transients in presence of such
+	signals.
+
 </p>
 
 
@@ -375,17 +378,18 @@
   </tr>
 </table>
 </p>
-	
+
 <p>
 <h3>Audio Reconstruction Comparison</h3>
 </p>
 <p>
 We analyze the spectral reconstruction capabilities of our model and compare with an ablated version (SLOW)
-without a fast generator learning to reconstruct the full spectrogram, and RAVE trained on the
-<i>Representation Learning</i> objective. We show reconstructed excerpts from the test set. <br>
-For reference, we also add RAVE, trained with an adversarial step. Although it shown worse 
-spectral reconstruction results, we believe it presents better audio quality.
-We leave for future work an exploration of adversarial training possibilities in a latency-hiding configuration.
+without the fast generator, that learns to reconstruct the full spectrogram, and RAVE trained on the
+<i>Representation Learning</i> objective. <br>
+For reference, we also add RAVE trained with an adversarial stage. We found it shows wose spectral
+reconstruction results, but we believe it presents better audio quality.
+We leave for future work an exploration of adversarial training possibilities in a latency-hiding configuration.<br>
+We show reconstructed excerpts from the test set.
 </p>
 
 
